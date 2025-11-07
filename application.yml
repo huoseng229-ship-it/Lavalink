@@ -1,9 +1,9 @@
 server:
-  port: ${PORT}
+  port: 433
 
 lavalink:
   server:
-    password: "mypass"
+    password: "wificuatoi"
     sources:
       youtube: true
       bandcamp: true
@@ -11,7 +11,7 @@ lavalink:
       twitch: true
       vimeo: true
       http: true
-      local: false
+      local: true
     bufferDurationMs: 400
     frameBufferDurationMs: 5000
     resamplingQuality: HIGH

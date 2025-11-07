@@ -1,12 +1,10 @@
-# Sử dụng Java 17 (Lavalink yêu cầu)
 FROM eclipse-temurin:17
 WORKDIR /app
 
-# Sao chép toàn bộ file từ repo
-COPY . .
+# Tải Lavalink bản release mới nhất (không cần Git)
+ADD https://github.com/lavalink-devs/Lavalink/releases/latest/download/Lavalink.jar Lavalink.jar
 
-# Build Lavalink bằng Gradle
-RUN ./gradlew build --no-daemon -x test
+# Sao chép file cấu hình
+COPY application.yml .
 
-# Chạy Lavalink (file JAR sẽ nằm trong build/libs/)
-CMD ["java", "-jar", "build/libs/Lavalink.jar"]
+CMD ["java", "-jar", "Lavalink.jar"]
